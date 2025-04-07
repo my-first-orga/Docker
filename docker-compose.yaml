@@ -1,0 +1,19 @@
+version: "3"
+services:
+  spring:
+    image: venkat956/today:1.0.0
+    container_name: "two"
+    ports:
+    - "8081:8081"
+    networks: 
+    - jio-2
+  dev:
+    image: nginx
+    container_name: "three"
+    ports:
+    - "9000:9000"
+    networks:
+    - jio-2  
+networks:
+  jio-2:
+    driver: bridge
